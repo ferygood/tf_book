@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: contents/one-neuron
-- file: contents/markdown-notebooks
-- file: contents/markdown
+- file: contents/fmnist
+- file: contents/imdb
