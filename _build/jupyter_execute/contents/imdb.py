@@ -105,5 +105,98 @@ model.compile(
 )
 
 
+# ## 創建驗證集  
+# 先從訓練集分出一些資料來做驗證 validating  
+# 測試集要拿來做測試，因為要拿模型沒看過的資料來做測試 testing
+# 
+# 
+
+# In[10]:
+
+
+x_val = train_data[:10000]
+partial_x_train = train_data[10000:]
+
+y_val = train_labels[:10000]
+partial_y_train = train_labels[10000:]
+
+
+# ## 訓練模型
+# 
+
+# In[11]:
+
+
+history = model.fit(
+    partial_x_train,
+    partial_y_train,
+    epochs=40,
+    batch_size=512,
+    validation_data=(x_val, y_val),
+    verbose=0
+)
+
+
+# ## 評估模型  
+# 計算出損失值 loss，以及準確率 accuracy
+
+# In[12]:
+
+
+results = model.evaluate(test_data, test_labels, verbose=2)
+print(results)
+
+
+# ## 創建一個準確率和損失值隨時間變化的圖表  
+# `model.fit()` 有一個 `history` 的屬性
+
+# In[13]:
+
+
+history_dict = history.history
+history_dict.keys()
+
+
+# In[14]:
+
+
+import matplotlib.pyplot as plt
+
+acc = history_dict['accuracy']
+val_acc = history_dict['val_accuracy']
+loss = history_dict['loss']
+val_loss = history_dict['val_loss']
+
+epochs = range(1, len(acc) + 1)
+
+# “bo”代表 "藍點"
+plt.plot(epochs, loss, 'bo', label='Training loss')
+# b代表“藍色實線”
+plt.plot(epochs, val_loss, 'b', label='Validation loss')
+plt.title('Training and validation loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+
+plt.show()
+
+
+# In[15]:
+
+
+plt.clf()   # 清除數字
+
+plt.plot(epochs, acc, 'bo', label='Training acc')
+plt.plot(epochs, val_acc, 'b', label='Validation acc')
+plt.title('Training and validation accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+
+plt.show()
+
+
+# 從上述兩個圖看出大概在 epochs=15 的時候，即可訓練完成，再多可能會進入一個 over-fitting 的狀態。不過官方文件是說 epochs=20。
+
 # 參考資料  
 # [官方文件](https://www.tensorflow.org/tutorials/keras/text_classification)
