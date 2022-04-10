@@ -3,7 +3,10 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: contents/one-neuron
-- file: contents/fmnist
-- file: contents/imdb
+parts:
+  - caption: Topic Examples
+    numbered: true
+    chapters:
+    - file: contents/one-neuron
+    - file: contents/fmnist
+    - file: contents/imdb
