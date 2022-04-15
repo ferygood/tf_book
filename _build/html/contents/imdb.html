@@ -99,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Topic Examples
+  Learning TensorFlow
  </span>
 </p>
 <ul class="current nav bd-sidenav">
@@ -322,7 +322,7 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="imdb">
-<h1><span class="section-number">3. </span>IMDB 評論分類<a class="headerlink" href="#imdb" title="Permalink to this headline">¶</a></h1>
+<h1>IMDB 評論分類<a class="headerlink" href="#imdb" title="Permalink to this headline">¶</a></h1>
 <p>評論分成 positive 或是 negative 兩類，是一個二元分類問題。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -361,7 +361,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id1">
-<h2><span class="section-number">3.1. </span>探勘數據<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>探勘數據<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>從上述展示可以看到我們訓練集有 25000 筆資料，label 有 25000 種<br />
 而第一筆電影評論長度為 218，且都被轉換成數字<br />
 然而每則電影評論的長度不盡相同，如下：</p>
@@ -399,7 +399,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id2">
-<h2><span class="section-number">3.2. </span>準備數據<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>準備數據<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>這裡我們需要先將影評內容的 numpy array 轉換成 tensor，官方文件示範的方法為填充數據來讓每一則評論的長度相同，因為輸入到神經網路的 tensor 必須是相同的長度。這裡使用的方法為用 <a class="reference external" href="https://tensorflow.google.cn/api_docs/python/tf/keras/preprocessing/sequence/pad_sequences">pad sequences 函數</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,7 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id3">
-<h2><span class="section-number">3.3. </span>建構模型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>建構模型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>須考慮你需要多少層的模型，模型每層裡面要有多少 hidden units</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -546,7 +546,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="section" id="id4">
-<h2><span class="section-number">3.4. </span>創建驗證集<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>創建驗證集<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>先從訓練集分出一些資料來做驗證 validating<br />
 測試集要拿來做測試，因為要拿模型沒看過的資料來做測試 testing</p>
 <div class="cell docutils container">
@@ -562,7 +562,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="section" id="id5">
-<h2><span class="section-number">3.5. </span>訓練模型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>訓練模型<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
@@ -579,7 +579,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="section" id="id6">
-<h2><span class="section-number">3.6. </span>評估模型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>評估模型<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>計算出損失值 loss，以及準確率 accuracy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -599,7 +599,7 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="section" id="id7">
-<h2><span class="section-number">3.7. </span>創建一個準確率和損失值隨時間變化的圖表<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>創建一個準確率和損失值隨時間變化的圖表<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">model.fit()</span></code> 有一個 <code class="docutils literal notranslate"><span class="pre">history</span></code> 的屬性</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

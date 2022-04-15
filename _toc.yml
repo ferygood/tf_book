@@ -4,9 +4,10 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Topic Examples
-    numbered: true
+  - caption: Learning TensorFlow
     chapters:
-    - file: contents/one-neuron
-    - file: contents/fmnist
-    - file: contents/imdb
+    - file: contents/basic-tf
+      sections:
+      - file: contents/one-neuron
+      - file: contents/fmnist
+      - file: contents/imdb
