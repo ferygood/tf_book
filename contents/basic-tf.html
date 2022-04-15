@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. 單顆神經元 &#8212; My sample book</title>
+    <title>Basic TensorFlow examples &#8212; My sample book</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Fashion MNIST 基礎分類" href="fmnist.html" />
+    <link rel="next" title="1. 單顆神經元" href="one-neuron.html" />
     <link rel="prev" title="TensorFlow 筆記" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -104,20 +104,32 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   1. 單顆神經元
+   Basic TensorFlow examples
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fmnist.html">
-   2. Fashion MNIST 基礎分類
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="imdb.html">
-   3. IMDB 評論分類
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="one-neuron.html">
+     1. 單顆神經元
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fmnist.html">
+     2. Fashion MNIST 基礎分類
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="imdb.html">
+     3. IMDB 評論分類
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -160,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/contents/one-neuron.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/contents/basic-tf.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="下載源文件" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -180,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="源庫"><i
                     class="fab fa-github"></i>資料庫</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/one-neuron.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcontents/basic-tf.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="打開一個問題"><i class="fas fa-lightbulb"></i>公開的問題</button></a>
         
@@ -208,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>單顆神經元</h1>
+                <h1>Basic TensorFlow examples</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -219,45 +231,16 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1>單顆神經元<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>這裡示範最基本的 TensorFlow 架構，由一顆神經元組成的網路<br />
-用簡單的 keras.Sequential model 輸入一單位的 input, input shape 也是 1<br />
-sgd 優化為 stochastic gradient descent<br />
-train 500 個 epochs, 答案非 19 而是近似 19 原因是模型會加入誤差以防 over-fitting</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="basic-tensorflow-examples">
+<h1>Basic TensorFlow examples<a class="headerlink" href="#basic-tensorflow-examples" title="Permalink to this headline">¶</a></h1>
+<p>Here we show the basic tensorflow examples:</p>
+<ol class="simple">
+<li><p><a class="reference internal" href="one-neuron.html"><span class="doc std std-doc">單顆神經元範例 One-neuron example</span></a></p></li>
+<li><p><a class="reference internal" href="fmnist.html"><span class="doc std std-doc">Fashion MNIST 基礎分類</span></a></p></li>
+<li><p><a class="reference internal" href="imdb.html"><span class="doc std std-doc">IMDB 評論分類</span></a></p></li>
+</ol>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
-<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
-
-<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="mf">10.0</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-08 12:01:39.655588: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[18.979288]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>參考資料：<br />
-<a class="reference external" href="https://www.youtube.com/watch?v=OXNC_sefxi4&amp;list=PLQY2H8rRoyvwr-3IlvJXA1JyOlpcbIGa1&amp;index=1&amp;ab_channel=TensorFlow">TensorFlow YouTube 影片</a></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -292,10 +275,10 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
             <p class="prev-next-title">TensorFlow 筆記</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="fmnist.html" title="next page">
+    <a class='right-next' id="next-link" href="one-neuron.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Fashion MNIST 基礎分類</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>單顆神經元</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
